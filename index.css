@@ -1,0 +1,167 @@
+h1{
+    font-size:4em;
+    font-family:arial;
+}
+body {
+    /*flex displays everything in one row if it can by default, changing
+    flex direction to column makes it in one row vertically*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;
+    color: black;
+    font-family:arial
+}
+  
+#grid {
+    /*grid templates are for the spacing between columns and rows, cursor
+    changes what the cursor will look like when you hover over the element
+    Position is used to make the cross line inherit from the board and not
+    the entire page by using position absolute in the cross line*/
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    cursor: pointer;
+    position: relative;
+}
+  
+.tile {
+    /*display flex to make it go horizontally, justify to center horizontally
+    and align-items to center it vertically*/
+    color: currentColor;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.right {
+    /*This is to apply a border to specific elements to create the grid*/
+    border-right: 0.2em solid rgb(32, 1, 1);
+}
+  
+.under {
+    border-bottom: 0.2em solid rgb(32, 1, 1);
+}
+  
+.cross {
+    /*An absolutely positioned element is an element whose computed 
+    position value is absolute or fixed. The top, right, bottom, and 
+    left properties specify offsets from the edges of the element's 
+    containing block.*/
+    position: absolute;
+    background-color: #201F54;
+}
+  
+.cross-row-1 {
+    width: 100%;
+    height: 15px;
+    top: 13%;
+}
+
+.cross-row-2 {
+    width: 100%;
+    height: 15px;
+    top: 47%;
+}
+
+.cross-row-3 {
+    width: 100%;
+    height: 15px;
+    top: 81%;
+}
+
+.cross-column-1 {
+    height: 100%;
+    width: 15px;
+    left: 13.5%;
+}
+
+.cross-column-2 {
+    height: 100%;
+    width: 15px;
+    left: 47%;
+}
+
+.cross-column-3 {
+    height: 100%;
+    width: 15px;
+    left: 82%;
+}
+
+.cross-diagonal-1 {
+    /*skewY basically orients the element at an angle relative to the Y axis*/
+    width: 90%;
+    height: 15px;
+    top: 48.5%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+
+.cross-diagonal-2 {
+    width: 90%;
+    height: 15px;
+    top: 46.5%;
+    left: 5%;
+    transform: skewY(-45deg);
+}
+  
+h1 {
+    color: currentColor;
+}
+  
+#game-over {
+    text-align: center;
+    border: #201F54 12px solid;
+    padding: 40px;
+    width: 50%;
+    margin-top: 40px;
+}
+
+#game-over-text{
+    font-size:4em;
+}
+h2 {
+    color: currentColor;
+    font-size: 2em;
+    margin-top: 0px;
+}
+  
+button {
+    background-color: transparent;
+    color: currentColor;
+    border: currentColor 1px solid;
+    padding: 10px;
+    font-size: 1.5em;
+}
+  
+.hidden {
+    display: none;
+}
+  
+.visible {
+    display: block;
+
+}
+
+/*We are creating a class called x-hover so that when you hover with your mouse
+it activates the class and then after it will place html on the element hovered*/
+.x-hover:hover::after {
+    content: "X";
+    opacity: 0.3;
+}
+  
+.o-hover:hover::after {
+    content: "O";
+    opacity: 0.4;
+}
+
+#score{
+    background-color: lightblue;
+    margin: 50px;
+    font-size: 2em;
+    width:50%;
+    justify-content:center;
+    align-items:center;
+    border: currentColor 3px solid;
+}
